@@ -73,10 +73,9 @@ n latest
 
 `pnpm build`
 
-#
-#
 
 `cd ~`
+
 `git clone https://github.com/ethereum-optimism/op-geth.git`
 
 `cd op-geth`
