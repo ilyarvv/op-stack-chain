@@ -469,7 +469,7 @@ contract OptimismPortal_Test is CommonTest {
         );
 
         vm.prank(address(systemConfig));
-        optimismPortal.setConfig(ConfigType.GAS_PAYING_TOKEN, abi.encode(_token, _decimals, _name, _symbol));
+        optimismPortal.setGasPayingToken({ _token: _token, _decimals: _decimals, _name: _name, _symbol: _symbol });
     }
 
     /// @dev Tests that the gas paying token cannot be set by a non-system config.
@@ -477,7 +477,7 @@ contract OptimismPortal_Test is CommonTest {
         vm.assume(_caller != address(systemConfig));
         vm.prank(_caller);
         vm.expectRevert(Unauthorized.selector);
-        optimismPortal.setConfig(ConfigType.GAS_PAYING_TOKEN, abi.encode(address(0), 0, "", ""));
+        optimismPortal.setGasPayingToken({ _token: address(0), _decimals: 0, _name: "", _symbol: "" });
     }
 
     /// @dev Tests that `depositERC20Transaction` reverts when the gas paying token is ether.
