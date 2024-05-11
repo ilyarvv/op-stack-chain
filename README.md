@@ -89,7 +89,13 @@ n latest
 
 `./packages/contracts-bedrock/scripts/getting-started/wallets.sh`
 
+Необходимо пополнить кошельки
 
+Admin — 0.5 Sepolia ETH
+
+Proposer — 0.2 Sepolia ETH
+
+Batcher — 0.2 Sepolia ETH
 
 # Настройка .envrc
 `cp .envrc.example .envrc`
